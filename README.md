@@ -1,3 +1,3 @@
-# pern-ecommerce-app
+# Ecommerce app
 
 A PERN ecommerce app
