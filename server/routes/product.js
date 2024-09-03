@@ -14,6 +14,13 @@ module.exports = (app) => {
 
          const queryParams = req.query;
 
+         /* const products = await ProductModelInstance.find({
+            filter: 'name = \'Product A\'',
+            sort: 'price DESC',
+            limit: 10,
+            offset: 0
+          }); */
+
          const response = await ProductServiceInstance.list(queryParams);
 
          res.status(200).send(response);

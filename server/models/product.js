@@ -16,10 +16,25 @@ module.exports = class ProductModel {
                             FROM products`;
          const values = [];
 
+         // Apply filtering
+         if (options.filter) {
+            statement += ` WHERE name = ${options.filter}`;
+         }
+
+         // Apply sorting
+         if (options.sort) {
+            statement += ` ORDER BY price ${options.filter}`;
+         }
+
+         // Apply pagination
+         if (options.limit && options.offset) {
+            statement += ` LIMIT ${options.limit} OFFSET ${options.offset}`;
+         }
+
          const result = await db.query(statement, values);
 
          if (result.rows?.length) {
-            return result.rows;
+            return result.rows[0];
          }
 
          return [];
@@ -36,7 +51,7 @@ module.exports = class ProductModel {
     */
 
    async findOne(id) {
-      
+
       try {
 
          const statement = `SELECT *
