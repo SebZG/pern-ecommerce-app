@@ -19,14 +19,14 @@ module.exports = (app, passport) => {
          const response = await AuthServiceInstance.register(data);
 
          res.status(200).send(response);
-         
+
       } catch (err) {
          next(err);
       }
    });
 
    // Login Endpoint
-   router.post("/login", async (req, res) => { // TODO: Add middleware to check if user is already logged in
+   router.post("/login", passport.authenticate("local"), async (req, res) => {
 
       try {
 
