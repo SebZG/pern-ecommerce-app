@@ -9,6 +9,7 @@ module.exports = class ProductModel {
     */
 
    async find(options = {}) {
+
       try {
 
          const statement = `SELECT *
@@ -35,6 +36,7 @@ module.exports = class ProductModel {
     */
 
    async findOne(id) {
+      
       try {
 
          const statement = `SELECT *
