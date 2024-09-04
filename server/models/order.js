@@ -121,7 +121,7 @@ module.exports = class OrderModel {
                         WHERE id = $1`;
          const values = [orderId];
 
-         // Execute SQL statment
+         // Execute SQL statement
          const result = await db.query(statement, values);
 
          if (result.rows?.length) {

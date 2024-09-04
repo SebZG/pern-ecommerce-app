@@ -45,7 +45,7 @@ module.exports = class CartItemModel {
          const condition = pgp.as.format(`WHERE id = ${id} RETURNING *`, { id });
          const statement = pgp.helpers.update(data, null, "cartItems") + condition;
 
-         // Excecute SQL statement
+         // Execute SQL statement
          const result = db.query(statement);
 
          if (result.rows?.length) {

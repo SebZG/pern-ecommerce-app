@@ -89,12 +89,12 @@ module.exports = class CartService {
 
       try {
 
-         const stripe = require("stripe")('sk_test_FOY6txFJqPQvJJQxJ8jpeLYQ')
+         const stripe = require("stripe")('sk_test_FOY6txFJqPQvJJQxJ8jpeLYQ') // TODO: Pass real secret to .env file
 
          // Load cart items
          const cartItems = await CartItemModel.find(cartId);
 
-         // Generate total price fromc art items
+         // Generate total price from cart items
          const total = cartItems.reduce((total, item) => {
             return total += Number(item.price);
          }, 0);
