@@ -11,7 +11,7 @@ module.exports = class CartService {
 
       try {
 
-         // Intantiate a new cart and save
+         // Instantiate a new cart and save
          const Cart = new CartModel();
          const cart = await Cart.create(userId);
 
