@@ -109,7 +109,7 @@ module.exports = class CartItemModel {
                             RETURNING *`;
          const values = [id];
 
-         // Execute SQL statment
+         // Execute SQL statement
          const result = await db.query(statement, values);
 
          if (result.rows?.length) {
