@@ -67,7 +67,7 @@ const { DB } = require("./config");
    `
 
    const cartItemsTable = `
-      CREATE TABLE IF NOT EXISTS orderItems (
+      CREATE TABLE IF NOT EXISTS cartItems (
          id             INT               PRIMARY KEY GENERATED ALWAYS AS IDENTITY NO NULL,
          qty            INT               NOT NULL,
          product_id     INT               NOT NULL,
